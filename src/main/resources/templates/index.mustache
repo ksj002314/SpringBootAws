@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {{>layout/header}}
 <h1>스프링 부트로 시작하는 웹서비스</h1>
     <div class="col-md-12">
@@ -27,6 +28,38 @@
             <th>작성자</th>
             <th>최종 수정일</th>
         </tr>
+=======
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+{{>layout/header}}
+
+    <h1>스프링 부트로 시작하는 웹서비스</h1>
+    <div class="col-md-12">
+        <div class="col-md-6">
+            <a href="/posts/save" role="button"
+               class="btn btn-primary">글 등록</a>
+        </div>
+    </div>
+    <br>
+
+    <!-- 목록 출력 영역 -->
+    <table class="table table-horizontal table-bordered">
+        <thead class="thead-strong">
+            <tr>
+                <th>게시글 번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>최종 수정일</th>
+            </tr>
+>>>>>>> origin/main
         </thead>
         <tbody id = "tbody">
         {{#posts}}
@@ -40,6 +73,7 @@
         </tbody>
     </table>
 {{>layout/footer}}
+<<<<<<< HEAD
 
 <!-- Mustache 문법 -->
 <!-- #userName : 머스테치는 다른 언어와 같은 if문 등을 제공하지 않는다.
@@ -58,3 +92,13 @@
 <!-- /oauth2/authorization/naver
         네이버 로그인 URL은 application-oauth.properties에 등록한 redirect-uri 값에 맞춰 자동으로 등록된다.
         /oauth2/authorization/ 까지는 고정이고 마지막 Path만 각 소셜 로그인 코드를 사용하면 된다. -->
+=======
+</body>
+</html>
+
+<!-- 설명 -->
+<!--각 header footer 정해져있는 표시 :  현재 머스테치 파일을 기준으로 다른 파일을 가져옴-->
+
+<!-- #posts : posts라는 List를 순회, Java의 for문과 동일하게 생각-->
+<!-- id 등의 변수 : List에서 뽑아낸 객체의 필드를 사용-->
+>>>>>>> origin/main
