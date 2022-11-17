@@ -30,6 +30,11 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    // 소셜 로그인 등 클라이언트 입장에서 소셜 기능 구현시 필요한 의존성
+    implementation('org.springframework.boot:spring-boot-starter-oauth2-client')
+
+    implementation('org.springframework.session:spring-session-jdbc')
+
 }
 
 tasks.named('test') {

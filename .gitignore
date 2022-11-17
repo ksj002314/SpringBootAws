@@ -35,3 +35,7 @@ out/
 
 ### VS Code ###
 .vscode/
+
+
+### Oauth 깃헙 업데이트 방지 (업데이트x)
+application-oauth.properties
