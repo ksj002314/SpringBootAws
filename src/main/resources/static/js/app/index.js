@@ -5,24 +5,14 @@ var main = {
             _this.save();
         });
 
-<<<<<<< HEAD
-        $('#btn-update').on('click', function () {
+        $('#btn-update').on('click', function() {
             _this.update();
         });
 
         $('#btn-delete').on('click', function () {
             _this.delete();
         });
-=======
-        $('#btn-update').on('click', function() {
-            _this.update();
-        });
 
-        $('#btn-delete').on('click', function() {
-            _this.delete();
-        });
-
->>>>>>> origin/main
     },
     save : function () {
         var data = {
@@ -35,11 +25,7 @@ var main = {
             type: 'POST',
             url: '/api/v1/posts',
             dataType: 'json',
-<<<<<<< HEAD
-            contentType:'application/json; charset=utf-8',
-=======
             contentType: 'application/json; charset=utf-8',
->>>>>>> origin/main
             data: JSON.stringify(data)
         }).done(function() {
             alert('글이 등록되었습니다.');
@@ -61,19 +47,11 @@ var main = {
             type: 'PUT',
             url: '/api/v1/posts/'+id,
             dataType: 'json',
-<<<<<<< HEAD
-            contentType:'application/json; charset=utf-8',
-            data: JSON.stringify(data)
-        }).done(function() {
-            alert('글이 수정되었습니다.');
-            window.location.href = '/';
-=======
             contentType: 'application/json; charset=utf-8',
             data: JSON.stringify(data)
         }).done(function () {
             alert('글이 수정되었습니다.');
             window.location.href='/';
->>>>>>> origin/main
         }).fail(function (error) {
             alert(JSON.stringify(error));
         });
@@ -84,30 +62,18 @@ var main = {
 
         $.ajax({
             type: 'DELETE',
-<<<<<<< HEAD
             url: '/api/v1/posts/'+id,
             dataType: 'json',
             contentType:'application/json; charset=utf-8'
         }).done(function() {
             alert('글이 삭제되었습니다.');
             window.location.href = '/';
-=======
-            url: '/api/v1/posts/' +id,
-            dataType: 'json',
-            contentType: 'application/json; charset=utf-8'
-        }).done(function () {
-            alert('글이 삭제되엇습니다.');
-            window.location.href='/';
->>>>>>> origin/main
         }).fail(function (error) {
             alert(JSON.stringify(error));
         });
     }
 };
 
-<<<<<<< HEAD
-main.init();
-=======
 main.init();
 
 /* 설명 */
@@ -121,4 +87,3 @@ main.init();
 
 /* $('#btn-update').on('click') */
 /* btn-update란 id를 가진 HTML 엘리먼트에 click 이벤트가 발생할 때 update function을 실행하도록 이벤트를 등록 */
->>>>>>> origin/main

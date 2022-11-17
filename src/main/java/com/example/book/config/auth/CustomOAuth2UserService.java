@@ -29,21 +29,22 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
         OAuth2User oAuth2User = delegate.loadUser(userRequest);
 
         String registrationId = userRequest
-                .getClientRegistration().getRegistrationId();
+                .getClientRegistration().getRegistrationId(); //1
         String userNameAttributeName = userRequest
                 .getClientRegistration().getProviderDetails()
                 .getUserInfoEndpoint()
-                .getUserNameAttributeName();
+                .getUserNameAttributeName(); //2
 
-        OAuthAttributes attributes  = OAuthAttributes.of(registrationId, userNameAttributeName, oAuth2User.getAttributes());
+        OAuthAttributes attributes = OAuthAttributes.of(registrationId, userNameAttributeName,
+                oAuth2User.getAttributes()); //3
 
         User user = saveOrUpdate(attributes);
 
-        httpSession.setAttribute("user", new SessionUser(user));
+        httpSession.setAttribute("user", new SessionUser(user)); //4
 
         return new DefaultOAuth2User(
-                Collections.singleton(
-                        new SimpleGrantedAuthority((user.getRoleKey()))),
+                Collections.singleton(new
+                        SimpleGrantedAuthority((user.getRoleKey()))),
                 attributes.getAttributes(),
                 attributes.getNameAttributeKey()
         );
@@ -56,6 +57,7 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
         return userRepository.save(user);
     }
 }
+
 
 /*  registraionld : 현재 로그인 진행 중인 서비스를 구분하는 코드, 현재는 구글만 사용하여 불필요한 값이지만, 이후 네이버 로그인 연동시 구분하기 위해 사용 */
 /*  userNameAttributeName : OAuth2 로그인 진행 시 키가 되는 필드값을 이야기한다(=primary Key와 같은 의미) */

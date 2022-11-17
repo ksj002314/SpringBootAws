@@ -9,26 +9,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class IndexControllerTest {
-<<<<<<< HEAD
 
     @Autowired
     private TestRestTemplate restTemplate;
 
     @Test
-    void 메인페이지_로딩() {
+    void 메인페이지_로딩 () {
         String body = this.restTemplate.getForObject("/", String.class);
 
-        //then
-=======
-    
-    @Autowired
-    private TestRestTemplate restTemplate;
-    
-    @Test
-    void 메인페이지_로딩() {
-        String body = this.restTemplate.getForObject("/",String.class);
-        
->>>>>>> origin/main
         assertThat(body).contains("스프링 부트로 시작하는 웹 서비스");
     }
 }

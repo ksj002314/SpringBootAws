@@ -12,10 +12,6 @@ public class PostsListResponseDto {
     private String author;
     private LocalDateTime modifiedDate;
 
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/main
     public PostsListResponseDto(Posts entity) {
         this.id = entity.getId();
         this.title = entity.getTitle();
